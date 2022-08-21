@@ -11,17 +11,17 @@
 <body>
     
     <header>
-        <div class="container">
+        <div class="container container-header">
             <h1>Metric/Imperial Unit Conversion</h1>
-            <input type="text" value="20">
+            <input id="units-input" type="text" value="20">
             <button id="btn-convert">Convert</button>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container container-conversion">
         <div class="conversion">
             <h2 class="conversion-title">Length (Meters/Feet)</h2>
-            <p class="conversion-results">Result here</p>
+            <p class="conversion-results" id="conv-meters">Result here</p>
         </div>
         <div class="conversion">
             <h2 class="conversion-title">Volume (Liters/Gallons)</h2>
