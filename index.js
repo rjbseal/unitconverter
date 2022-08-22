@@ -9,7 +9,12 @@ const btnConvert = document.getElementById("btn-convert")
 const convMeters = document.getElementById("conv-meters")
 
 btnConvert.addEventListener("click", function() {
-    convMeters.textContent = `${units.value} meters = ${convertMetersToFeet(units.value)} feet | ${units.value} feet = ${convertFeetToMeters(units.value)} meters`
+    
+    if(isNaN(units.value)) {
+        console.log("Not a number!")
+    } else {
+        convMeters.textContent = `${units.value} meters = ${convertMetersToFeet(units.value)} feet | ${units.value} feet = ${convertFeetToMeters(units.value)} meters`
+    }
 })
 
 function convertMetersToFeet (meters) {
