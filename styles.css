@@ -4,7 +4,6 @@ body {
     border: 5px solid #fff;
     font-family: 'Inter', sans-serif;
     background: #F4F4F4;
-    height: 100vh;
 }
 
 header {
@@ -72,7 +71,6 @@ button {
 .container-conversion {
     display: flex;
     flex-direction: column;
-    /* border: 2px solid magenta; */
 }
 
 .conversion {
