@@ -52,5 +52,5 @@ function setConversions(unitsToConvert) {
     toGallons = (unitsToConvert / 4.546).toFixed(2) // convert liters to gallons
     toLiters = (unitsToConvert * 4.546).toFixed(2) // convert gallons to liters
     toPounds = (unitsToConvert * 2.205).toFixed(2) // convert kilos to pounds
-    toKilos = (unitsToConvert / 2.205).toFixed(2) // conver pounds to kilos
+    toKilos = (unitsToConvert / 2.205).toFixed(2) // convert pounds to kilos
 }
