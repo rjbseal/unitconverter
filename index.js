@@ -1,6 +1,6 @@
 
 // store unit conversions in object
-let conversions = {
+const conversions = {
     toFeet: 0,
     toMeters: 0,
     toGallons: 0,
@@ -8,6 +8,8 @@ let conversions = {
     toPounds: 0,
     toKilos: 0
 }
+
+let { toFeet, toMeters, toGallons, toLiters, toPounds, toKilos } = conversions;
 
 // gather page elements
 const units = document.getElementById("units-input")
@@ -21,34 +23,34 @@ btnConvert.addEventListener("click", function() {
     if(isNaN(units.value)) { // only dare to attempt calc if valid number
         units.value = "0"
         console.log("Not a number!")
-    } else {
+    } else {  
 
         setConversions(units.value)
 
         // render meters/feet conversion
         convMeters.textContent = `
-            ${units.value} meters = ${conversions.toFeet} feet | 
-            ${units.value} feet = ${conversions.toMeters} meters`
+            ${units.value} meters = ${toFeet} feet | 
+            ${units.value} feet = ${toMeters} meters`
 
         // render liters/gallons conversion
         convLiters.textContent = `
-            ${units.value} liters = ${conversions.toGallons} gallons |
-            ${units.value} gallons = ${conversions.toLiters} liters`
+            ${units.value} liters = ${toGallons} gallons |
+            ${units.value} gallons = ${toLiters} liters`
         
         // render kilos/pounds conversion
         convKilos.textContent = `
-            ${units.value} kilos = ${conversions.toPounds} pounds |
-            ${units.value} pounds = ${conversions.toKilos} kilos`
+            ${units.value} kilos = ${toPounds} pounds |
+            ${units.value} pounds = ${toKilos} kilos`
     }
 })
 
 function setConversions(unitsToConvert) {
 
     // set unit conversions and round to 2 decimal places
-    conversions.toFeet = (unitsToConvert * 3.281).toFixed(2) // covert meters to feet
-    conversions.toMeters = (unitsToConvert / 3.281).toFixed(2) // convert feet to meters
-    conversions.toGallons = (unitsToConvert / 4.546).toFixed(2) // convert liters to gallons
-    conversions.toLiters = (unitsToConvert * 4.546).toFixed(2) // convert gallons to liters
-    conversions.toPounds = (unitsToConvert * 2.205).toFixed(2) // convert kilos to pounds
-    conversions.toKilos = (unitsToConvert / 2.205).toFixed(2) // conver pounds to kilos
+    toFeet = (unitsToConvert * 3.281).toFixed(2) // covert meters to feet
+    toMeters = (unitsToConvert / 3.281).toFixed(2) // convert feet to meters
+    toGallons = (unitsToConvert / 4.546).toFixed(2) // convert liters to gallons
+    toLiters = (unitsToConvert * 4.546).toFixed(2) // convert gallons to liters
+    toPounds = (unitsToConvert * 2.205).toFixed(2) // convert kilos to pounds
+    toKilos = (unitsToConvert / 2.205).toFixed(2) // conver pounds to kilos
 }
